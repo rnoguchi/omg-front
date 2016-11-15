@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  store_id: MyString
+  gs_cd: MyString
+  store_name: MyString
+  store_img_url: MyString
+  business_hours: MyString
+  holiday: MyString
+  pc_site_url: MyString
+  mobile_site_url: MyString
+  evaluation_score: 1.5
+  genre: MyString
+  average_dinner_price: MyString
+  average_lunch_price: MyString
+  visit_already_flg: false
+  upd_date: 2016-10-25 20:00:09
+  upd_apl: MyString
+  reg_date: 2016-10-25 20:00:09
+  reg_apl: MyString
+  version: 1
+
+two:
+  id: 1
+  store_id: MyString
+  gs_cd: MyString
+  store_name: MyString
+  store_img_url: MyString
+  business_hours: MyString
+  holiday: MyString
+  pc_site_url: MyString
+  mobile_site_url: MyString
+  evaluation_score: 1.5
+  genre: MyString
+  average_dinner_price: MyString
+  average_lunch_price: MyString
+  visit_already_flg: false
+  upd_date: 2016-10-25 20:00:09
+  upd_apl: MyString
+  reg_date: 2016-10-25 20:00:09
+  reg_apl: MyString
+  version: 1

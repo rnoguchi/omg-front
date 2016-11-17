@@ -30,3 +30,5 @@ doc/
 .idea
 .secret
 .metadata
+/client/node_modules
+/app/assets/javascripts/webpack

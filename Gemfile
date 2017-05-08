@@ -47,3 +47,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'react-rails', '~> 1.0'
+
+gem 'rake', '~> 10.1.0'

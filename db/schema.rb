@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025110009) do
+ActiveRecord::Schema.define(version: 20170412151633) do
+
+  create_table "gs_store_groups", force: :cascade do |t|
+    t.string   "store_group_id", null: false
+    t.string   "store_name",     null: false
+    t.datetime "upd_date"
+    t.string   "upd_apl"
+    t.datetime "reg_date"
+    t.string   "reg_apl"
+    t.integer  "version"
+  end
+
+  add_index "gs_store_groups", ["store_group_id", "store_name"], name: "index_gs_store_groups_on_store_group_id_and_store_name", unique: true
 
   create_table "gs_store_infos", force: :cascade do |t|
     t.string   "store_id"
@@ -34,6 +46,7 @@ ActiveRecord::Schema.define(version: 20161025110009) do
     t.integer  "version"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "store_group_id"
   end
 
 end

@@ -21,9 +21,9 @@ const styles = {
 
 let dialogProps = {};
 
-let storeInfos = {};
+//let storeInfos = new Array();
 
-let storeDetailInfos = {};
+//let storeDetailInfos = new Array();
 
 let storeGroupId = {};
 
@@ -32,7 +32,10 @@ class GrmGridList extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      open : false
+      open : false,
+      storeInfos : new Array(),
+      storeDetailInfos : new Array(),
+
     };
   };
 
@@ -44,7 +47,7 @@ class GrmGridList extends React.Component{
     request.get('/api/v1/grmlist/')
     .end(function(err, res){
     	if(err) {alert(res.text);}
-    	storeInfos = JSON.parse(res.text);
+    	this.setState({storeInfos : JSON.parse(res.text)});
     }.bind(this));
   };
 
@@ -53,8 +56,7 @@ class GrmGridList extends React.Component{
   	request.get(detailApiUrl)
   	.end(function(err, res) {
   		if(err) {alert(res.text);}
-  		storeDetailInfos = JSON.parse(res.text);
-  		// this.createDialogProps();
+  		this.setState({storeDetailInfos : JSON.parse(res.text)});
   		this.setState({open:true});
   	}.bind(this));
   };
@@ -106,7 +108,7 @@ class GrmGridList extends React.Component{
     >
       <Subheader>STORE LIST</Subheader>
 
-      {storeInfos.map((storeInfo) => (
+      {this.state.storeInfos.map((storeInfo) => (
 
         <GridTile
           key={storeInfo.id}
@@ -117,7 +119,7 @@ class GrmGridList extends React.Component{
 
       ))}
 
-      <StoreDetail {...storeDetailInfos} open={this.state.open} handleCloseCallBack={this.handleClose}/>
+      <StoreDetail storeDetailInfos={this.state.storeDetailInfos} open={this.state.open} handleCloseCallBack={this.handleClose}/>
     </GridList>
   </div>
   )};

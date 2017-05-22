@@ -32,3 +32,4 @@ doc/
 .metadata
 /client/node_modules
 /app/assets/javascripts/webpack
+/node_modules

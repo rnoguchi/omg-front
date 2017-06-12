@@ -59,4 +59,7 @@ Rails.application.routes.draw do
       resources :grmlist
     end
   end
+  namespace :crawler, format: 'json' do
+    resources :tbl_crawler
+  end
 end

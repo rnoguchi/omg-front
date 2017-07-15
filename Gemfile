@@ -53,3 +53,5 @@ gem 'rake', '~> 10.1.0'
 gem 'mechanize'
 
 gem 'nokogiri'
+
+gem 'config'

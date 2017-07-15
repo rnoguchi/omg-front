@@ -17,12 +17,13 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    width: '100%',
+    width: '50%',
     height: '100%',
     overflowY: 'auto',
   },
   titleStyle: {
     color: 'rgb(0, 188, 212)',
+    textDecoration: 'none',
   },
 };
 
@@ -54,16 +55,15 @@ class StoreDetail extends React.Component {
           contentStyle={customContentStyle}
         >
         <GridList
-          cellHeight={300}
           style={styles.gridList}>
 
           {this.props.storeDetailInfos.map((storeDetail) => (
             <GridTile
               cols={2}
-              title={<a href={storeDetail.mobile_site_url} target="_blank">{storeDetail.gs_name}モバイルサイトへ移動</a>}
+              title={<a href={storeDetail.pc_site_url} target="_blank">{storeDetail.gs_name}サイトへ移動</a>}
               titleStyle={styles.titleStyle}
             >
-            <img src={storeDetail.store_img_url}/>
+            <img src={storeDetail.store_img_url} width='90' height='90'/>
             </GridTile>
           ))}
 

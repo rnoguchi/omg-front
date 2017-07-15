@@ -62,4 +62,9 @@ Rails.application.routes.draw do
   namespace :crawler, format: 'json' do
     resources :tbl_crawler
   end
+  namespace :api, format: 'json' do
+    namespace :external do
+      resources :grv_api
+    end
+  end
 end

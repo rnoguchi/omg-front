@@ -87,7 +87,7 @@ class GrmGridList extends React.Component{
           key={storeInfo.id}
           title={storeInfo.store_name}
           actionIcon={<IconButton onClick={this.handleOpen} name={storeInfo.store_name} id={storeInfo.store_group_id}><StarBorder color="white" /></IconButton>}>
-          <img src={storeInfo.store_img_url} />
+          <img src={storeInfo.store_img_url} width='90' height='90'/>
         </GridTile>
 
       ))}

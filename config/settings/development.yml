@@ -1,0 +1,3 @@
+paths:
+  tbl_auth_path : "/usr/local/app/OMG/settings/tbl_auth.txt"
+  grv_auth_path : "/usr/local/app/OMG/settings/grv_auth.txt"

@@ -39,5 +39,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.logger = Logger.new("C:/Projects/OMG/workspace/logs/error.log", 'daily')
+  # config.logger = Logger.new("C:/Projects/OMG/workspace/logs/error.log", 'daily')
+  config.logger = Logger.new("/usr/local/app/OMG/logs/error.log", 'daily')
 end

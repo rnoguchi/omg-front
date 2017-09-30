@@ -20,7 +20,7 @@ class Api::External::GrvApiController < ApplicationController
       # 食べ店毎にAPI呼び出し
       result = nil;
       for info in gs_store_infos do
-        url = "https://api.gnavi.co.jp/RestSearchAPI/20150630/?keyid=" + apiKey + "&format=json&name=" + info.store_name
+        url = "https://api.gnavi.co.jp/RestSearchAPI/20150630/?keyid=" + apiKey + "&format=json&name=" + info.store_name.strip
         agent.get(url) do |json|
           result = JSON.parse(json.content.toutf8)
         end

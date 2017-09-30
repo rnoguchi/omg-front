@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412151633) do
+ActiveRecord::Schema.define(version: 20170930054042) do
 
   create_table "gs_store_groups", force: :cascade do |t|
     t.string   "store_group_id", null: false
@@ -49,5 +49,6 @@ ActiveRecord::Schema.define(version: 20170412151633) do
     t.string   "store_group_id"
   end
 
+  add_index "gs_store_infos", ["store_id", "gs_cd"], name: "index_gs_store_infos_on_store_id_and_gs_cd", unique: true
 
 end

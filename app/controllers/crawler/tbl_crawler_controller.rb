@@ -10,6 +10,7 @@ class Crawler::TblCrawlerController < ApplicationController
       agent = Mechanize.new
       agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
       login_url = "https://account.tabelog.com/kakaku_com/new"
+      logger.debug "--------- クローラー ログイン開始"
       agent.get(login_url) do |login_page|
         response = login_page.form_with(:action => "/kakaku_com") do |login_form|
           File.open(Settings.paths[:tbl_auth_path]) do |file|
@@ -19,13 +20,15 @@ class Crawler::TblCrawlerController < ApplicationController
           end
         end.submit
       end
+      logger.debug "--------- クローラー ログイン終了"
 
       mypage_url = "https://tabelog.com/rvwr/002830288/rvwlst/0/0/?smp=0"
       agent.get(mypage_url) do |mypage|
         mypage_html = mypage.content.toutf8
         mypage_contents = Nokogiri::HTML(mypage_html, nil, "utf-8")
         isFirst = true
-        for paging in mypage_contents.xpath(".//span[@class='page-move__num']/a") do
+        for paging in mypage_contents.css("li.c-pagination__item > a") do
+          logger.debug "--------- クローラー うううう"
           if isFirst
             url = "https://tabelog.com/rvwr/002830288/rvwlst/0/0/?smp=0";
             isFirst = false

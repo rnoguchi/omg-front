@@ -49,4 +49,5 @@ ActiveRecord::Schema.define(version: 20170412151633) do
     t.string   "store_group_id"
   end
 
+
 end

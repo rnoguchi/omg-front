@@ -28,7 +28,6 @@ class Crawler::TblCrawlerController < ApplicationController
         mypage_contents = Nokogiri::HTML(mypage_html, nil, "utf-8")
         isFirst = true
         for paging in mypage_contents.css("li.c-pagination__item > a") do
-          logger.debug "--------- クローラー うううう"
           if isFirst
             url = "https://tabelog.com/rvwr/002830288/rvwlst/0/0/?smp=0";
             isFirst = false
